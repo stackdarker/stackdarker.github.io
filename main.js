@@ -117,9 +117,9 @@ let skillsBound = false;
 function bindSkillsOnce() {
   if (skillsBound) return;
   skillsBound = true;
-  bindSkillPlanner();
   initSkillTree();
 }
+
 
 function renderQuests(quests) {
   const wrap = document.getElementById("quest-list");
@@ -642,12 +642,6 @@ function bindQuestFilters() {
          return c;
        }
      }
-   }
-   
-   if (document.readyState === "loading") {
-     document.addEventListener("DOMContentLoaded", initSkillTree);
-   } else {
-     initSkillTree();
    }
 
   function nextXPFor(level) {
