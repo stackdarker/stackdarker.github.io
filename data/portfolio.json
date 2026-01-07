@@ -22,18 +22,17 @@
         "difficulty": "S",
         "boss": "Multi-API",
         "desc": "A polished dashboard combining countries, FX, weather, time, and insights.",
-        "repo": "stackdarker/global-insights-hub",
+        "repo": "stackdarker/geo-intel-dashboard",
         "lastUpdated": "2025-12-15",
         "tags": ["Angular", "Spring Boot", "REST", "Caching"],
         "links": { "github": "https://github.com/stackdarker/geo-intel-dashboard.git", "live": "" },
         "questId": "insights-hub",
         "status": "completed",
         "images": {
-          "preview": "assets/projects/global-insights/preview.png",
+          "preview": "assets/projects/global-insights/preview.PNG",
           "gallery": [
-            "assets/projects/global-insights/1.png",
-            "assets/projects/global-insights/2.png",
-            "assets/projects/global-insights/3.png"
+            "assets/projects/global-insights/1.PNG",
+            "assets/projects/global-insights/2.PNG"
           ]
     }   
   } ]
