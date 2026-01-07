@@ -111,22 +111,13 @@ body{
 
 /* ====== anti-jiggle ====== */
 #sunset-scene, #night-scene,
-.sky-element, #avatar-container, .star-small,
+.sky-element, #avatar-container,
 .nav-star-orbit, .nav-star, .day-clouds, .night-clouds {
   backface-visibility: hidden;
   will-change: transform;
 }
 
-.star-small{
-  position:absolute;
-  top: 5%;
-  left: 50%;
-  width: min(1100px, 92vw);
-  transform: translate3d(-50%,0,0);
-  z-index:1;
-  pointer-events:none;
-  animation: starBob 5.2s ease-in-out infinite;
-}
+
 @keyframes starBob{
   0%,100%{ transform: translate3d(-50%,0,0); opacity:.86; }
   50%{ transform: translate3d(-50%,-8px,0); opacity:1; }
