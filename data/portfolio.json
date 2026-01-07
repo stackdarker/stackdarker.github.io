@@ -1,0 +1,43 @@
+{
+    "quests": [
+      {
+        "id": "insights-hub",
+        "projectId": "global-insights",
+        "title": "Ship Global Insights Hub",
+        "status": "completed",
+        "desc": "Multi-API insights, caching, robust UX states, deployment-ready polish."
+      },
+      {
+        "id": "portfolio-v2",
+        "title": "Upgrade Portfolio Systems",
+        "status": "in_progress",
+        "desc": "Add images/icon flavor, refine responsiveness, add more robust features."
+      }
+    ],
+    "projects": [
+      {
+        "id": "global-insights",
+        "title": "Global Insights Hub",
+        "type": "fullstack",
+        "difficulty": "S",
+        "boss": "Multi-API",
+        "desc": "A polished dashboard combining countries, FX, weather, time, and insights.",
+        "repo": "stackdarker/global-insights-hub",
+        "lastUpdated": "2025-12-15",
+        "tags": ["Angular", "Spring Boot", "REST", "Caching"],
+        "links": { "github": "https://github.com/stackdarker/geo-intel-dashboard.git", "live": "" },
+        "questId": "insights-hub",
+        "status": "completed",
+        "images": {
+          "preview": "assets/projects/global-insights/preview.png",
+          "gallery": [
+            "assets/projects/global-insights/1.png",
+            "assets/projects/global-insights/2.png",
+            "assets/projects/global-insights/3.png"
+          ]
+    }   
+  } ]
+}
+
+  
+  

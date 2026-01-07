@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>stackdarker | portfolio</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js" defer></script>
+
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <!-- =========================
+       INTRO — SUNSET
+  ========================== -->
+  <section id="sunset-scene" aria-label="Intro screen">
+    <div class="scene-bg scene-bg--sunset"></div>
+
+    <img src="assets/sun.svg" alt="" class="sky-element sun" />
+    <img src="assets/dayclouds.svg" alt="" class="sky-element day-clouds" />
+
+    <div class="intro-name" aria-hidden="true">
+      <span>karissa.daniel/portfolio</span>
+    </div>
+
+    <button class="enter-button" id="enter-btn" type="button">Enter</button>
+  </section>
+
+  <!-- Plane -->
+  <img id="plane" src="assets/plane.svg" alt="" />
+
+  <!-- =========================
+       NIGHT
+  ========================== -->
+  <section id="night-scene" aria-label="Landing screen">
+    <div class="scene-bg scene-bg--night"></div>
+
+    <img src="assets/star-small.svg" alt="" class="star-small" />
+    <img src="assets/moon.svg" alt="" class="sky-element moon" />
+    <img src="assets/nightclouds.svg" alt="" class="sky-element night-clouds" />
+
+    <div class="nav-star-orbit back" id="orbit-back"></div>
+
+    <div id="avatar-container">
+      <img src="assets/avatar-center.svg" alt="Avatar" />
+    </div>
+
+    <div class="nav-star-orbit front" id="orbit-front"></div>
+
+    <div class="landing-hint" aria-hidden="true">
+      <span>Scroll to begin</span>
+      <span class="hint-arrow">↓</span>
+    </div>
+  </section>
+
+  <!-- =========================
+        APP (main page)
+  ========================== -->
+  <div id="app" class="app-locked" aria-hidden="true">
+    <!-- HUD -->
+    <header class="hud" id="hud" aria-label="Portfolio HUD">
+      <div class="hud-left">
+        <div class="hud-logo" role="img" aria-label="Logo">
+          <span class="logo-mark">KD</span>
+          <span class="logo-text">stackdarker</span>
+        </div>
+
+        <div class="hud-divider"></div>
+
+        <div class="hud-stats" aria-label="Progress">
+          <div class="stat">
+            <div class="stat-label">LVL</div>
+            <div class="stat-value" id="hud-level">1</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">XP</div>
+            <div class="stat-value" id="hud-xp">0</div>
+          </div>
+          <div class="stat stat-wide">
+            <div class="stat-label">NEXT</div>
+            <div class="stat-value" id="hud-next">100</div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="hud-nav" aria-label="Main navigation">
+        <a class="hud-tab" href="#about">About</a>
+        <a class="hud-tab" href="#projects">Projects</a>
+        <a class="hud-tab" href="#skills">Skills</a>
+        <a class="hud-tab" href="#contact">Contact</a>
+      </nav>
+
+      <div class="hud-right">
+        <button class="hud-btn" id="btn-achievements" type="button" aria-haspopup="dialog">
+          Trophies
+        </button>
+        <button class="hud-btn" id="btn-sound" type="button" aria-pressed="false">
+          Sound: Off
+        </button>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main id="main-content">
+      <!-- ABOUT -->
+      <section id="about" class="zone" aria-label="About section">
+        <span class="lamp lamp--left"></span>
+        <span class="lamp lamp--right"></span>
+        <div class="zone-header">
+          <h2 class="zone-title">Character Sheet</h2>
+          <p class="zone-subtitle">Meet the hero!</p>
+        </div>
+
+        <div class="grid-2">
+          <article class="panel">
+            <div class="panel-head">
+              <h3>Profile</h3>
+              <span class="chip">Class: Software Engineer</span>
+            </div>
+
+            <div class="profile">
+              <div class="profile-photo hud-frame">
+                <img src="assets/profile-main.png" alt="Profile portrait" class="photo-main">
+                <img src="assets/profile-casual.png" alt="Profile casual" class="photo-hover">
+                <div class="hud-corners" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i>
+                </div>
+                
+              </div>              
+
+              <div class="profile-meta">
+                <div class="meta-row">
+                  <span class="meta-key">Role</span>
+                  <span class="meta-val">Full-Stack (Backend-focused)</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-key">Stacks</span>
+                  <span class="meta-val">Angular · Spring Boot · SQL · REST APIs · Android</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-key">Traits</span>
+                  <span class="meta-val">Systems thinking · Clean architecture · Data modeling · UX polish</span>
+                </div>
+
+                <div class="stats-grid" aria-label="Core stats">
+                  <div class="statcard" tabindex="0" data-tooltip="Component structure, layout, and interaction quality.">
+                    <div class="statcard-name">UI</div>
+                    <div class="statcard-val">A-</div>
+                  </div>
+                  <div class="statcard" tabindex="0" data-tooltip="APIs, caching, reliability, data modeling.">
+                    <div class="statcard-name">Backend</div>
+                    <div class="statcard-val">A</div>
+                  </div>
+                  <div class="statcard" tabindex="0" data-tooltip="SQL, schema thinking, query performance.">
+                    <div class="statcard-name">Data</div>
+                    <div class="statcard-val">A</div>
+                  </div>
+                  <div class="statcard" tabindex="0" data-tooltip="Docs, tests, CI/CD and shipping discipline.">
+                    <div class="statcard-name">Ship</div>
+                    <div class="statcard-val">A-</div>
+                  </div>
+                </div>
+
+                <div class="badge-row" aria-label="Badges">
+                  <span class="badge">AWS CCP</span>
+                  <span class="badge">ITIL 4</span>
+                  <span class="badge">CompTIA Project+</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <h3>Quest Log</h3>
+            
+              <div class="quest-filters" role="tablist" aria-label="Quest filters">
+                <button class="chip chip-btn is-active" type="button" data-quest-filter="all" aria-pressed="true">
+                  All
+                </button>
+                <button class="chip chip-btn" type="button" data-quest-filter="in_progress" aria-pressed="false">
+                  In Progress
+                </button>
+                <button class="chip chip-btn" type="button" data-quest-filter="completed" aria-pressed="false">
+                  Completed
+                </button>
+              </div>
+              
+            </div>
+            
+            <div class="quest" id="quest-list"></div>
+            
+
+          </article>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="zone" aria-label="Projects section">
+        <span class="lamp lamp--left"></span>
+        <span class="lamp lamp--right"></span>
+        <div class="zone-header">
+          <h2 class="zone-title">Mission Select</h2>
+          <p class="zone-subtitle">Projects the hero has worked on.</p>
+        </div>
+
+        <div class="toolbar">
+          <div class="toolbar-group">
+            <label class="toolbar-label" for="filter">Filter</label>
+            <select id="filter" class="select">
+              <option value="all">All</option>
+              <option value="fullstack">Full-Stack</option>
+              <option value="frontend">Front-End</option>
+              <option value="backend">Back-End</option>
+            </select>
+          </div>
+
+          <div class="toolbar-group">
+            <label class="toolbar-label" for="sort">Sort</label>
+            <select id="sort" class="select">
+              <option value="featured">Featured</option>
+              <option value="difficulty">Difficulty</option>
+            </select>
+          </div>
+
+          <div class="toolbar-spacer"></div>
+
+          <div class="toolbar-group">
+            <button class="btn" id="btn-random" type="button">Random Mission</button>
+          </div>
+        </div>
+
+        <div class="cards" id="project-grid">
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="zone" aria-label="Skills section">
+        <span class="lamp lamp--left"></span>
+        <span class="lamp lamp--right"></span>
+        <div class="zone-header">
+          <h2 class="zone-title">Skill Tree</h2>
+        </div>
+
+        <div class="skill-layout">
+          <aside class="panel panel-compact">
+            <div class="panel-head">
+              <h3>Build Planner</h3>
+              <span class="chip">Elite</span>
+            </div>
+
+            <p class="muted">Choose a target role to highlight relevant perks.</p>
+
+            <div class="planner">
+              <button class="btn" data-skill-filter="frontend">FRONTEND</button>
+              <button class="btn" data-skill-filter="backend">BACKEND</button>
+              <button class="btn" data-skill-filter="database">DATABASE</button>
+              <button class="btn" data-skill-filter="devops">DEVOPS</button>
+              <button class="btn" data-skill-filter="mobile">MOBILE</button>
+              <button class="btn" data-skill-filter="fullstack">FULL-STACK</button>
+              <button class="btn" data-skill-filter="reset">RESET</button>              
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="perk-detail" id="perk-detail" aria-live="polite">
+              <div class="perk-title">Select a perk</div>
+              <div class="perk-body muted">Click a node to view details.</div>
+            </div>
+          </aside>
+
+          <div class="panel" id="skills-tree-panel">
+            <div class="panel-head">
+              <h3>TREE</h3>
+              <span class="pill">INTERACTIVE</span>
+            </div>
+          
+            <div class="skill-tree" id="skillTree">
+              <!-- Connector lines layer -->
+              <svg class="skill-lines" id="skillLines" aria-hidden="true"></svg>
+          
+              <!-- Top node -->
+              <div class="skill-tree-top">
+                <div class="skill-node skill-node--top" data-node="root">
+                  <div class="node-title">Software Engineer</div>
+                  <div class="node-sub">FULL-STACK + ANDROID • BACKEND-LEANING</div>
+                </div>
+              </div>
+          
+              <!-- Category row -->
+              <div class="skill-tree-row" id="skillCats"></div>
+          
+              <!-- Columns -->
+              <div class="skill-tree-cols" id="skillCols"></div>
+            </div>
+          
+            <div class="hud-corners" aria-hidden="true">
+              <i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="zone" aria-label="Contact section">
+        <span class="lamp lamp--left"></span>
+        <span class="lamp lamp--right"></span>
+        <div class="zone-header">
+          <h2 class="zone-title">Comms Terminal</h2>
+        </div>
+
+        <div class="grid-2">
+          <article class="contact-panel">
+            <div class="contact-head">
+              <h3>Channels</h3>
+              <span class="chip">Copy</span>
+            </div>
+
+            <div class="channels">
+              <div class="channel">
+                <div class="channel-key">Email</div>
+                <div class="channel-val">
+                  <code id="email-value">stackdarker@gmail.com</code>
+                  <button class="btn btn-ghost copy-btn" data-copy="#email-value" type="button">Copy</button>
+                </div>
+              </div>
+
+              <div class="channel">
+                <div class="channel-key">GitHub</div>
+                <div class="channel-val">
+                  <code id="github-value">github.com/stackdarker</code>
+                  <button class="btn btn-ghost copy-btn" data-copy="#github-value" type="button">Copy</button>
+                </div>
+              </div>
+
+              <div class="channel">
+                <div class="channel-key">LinkedIn</div>
+                <div class="channel-val">
+                  <code id="linkedin-value">linkedin.com/in/stackdarker</code>
+                  <button class="btn btn-ghost copy-btn" data-copy="#linkedin-value" type="button">Copy</button>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+              <a class="btn" id="btn-resume" href="assets/resume/resume2025.pdf" download="resume2025.pdf">
+                Download Resume
+              </a>
+            </div>
+          </article>
+        </div>
+
+        
+      </section>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <span class="muted">© <span id="year"></span> stackdarker</span>
+          <span class="muted"></span>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Project modal -->
+    <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-backdrop" data-close="1"></div>
+      <div class="modal-card" role="document">
+        <div class="modal-head">
+          <div class="modal-title" id="modal-title">Project</div>
+          <button class="icon-btn" id="modal-close" type="button" aria-label="Close">✕</button>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+        <div class="modal-foot">
+          <button class="btn btn-ghost" data-close="1" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trophy modal -->
+    <div class="modal" id="trophy-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-backdrop" data-close="1"></div>
+      <div class="modal-card" role="document">
+        <div class="modal-head">
+          <div class="modal-title">Trophies</div>
+          <button class="icon-btn" id="trophy-close" type="button" aria-label="Close">✕</button>
+        </div>
+        <div class="modal-body">
+          <p class="muted">Your achievements.</p>
+          <div class="trophy-grid" id="trophy-grid"></div>
+        </div>
+        <div class="modal-foot">
+          <button class="btn btn-ghost" id="btn-reset-progress" type="button">Reset Progress</button>
+          <button class="btn" data-close="1" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="image-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close="true"></div>
+      <div class="modal-card" role="dialog" aria-modal="true">
+        <div class="modal-head">
+          <div class="modal-title">Screenshot</div>
+          <button class="icon-btn" type="button" data-close="true">✕</button>
+        </div>
+        <div class="modal-body">
+          <img class="image-modal-img" src="" alt="">
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- Toasts -->
+    <div class="toast-wrap" id="toast-wrap" aria-live="polite" aria-atomic="true"></div>
+  </div>
+</body>
+</html>
