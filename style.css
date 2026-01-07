@@ -65,6 +65,16 @@ body{
 .scene-bg--sunset{ background-image:url('assets/sunset-bg.svg'); }
 .scene-bg--night{ background-image:url('assets/night-bg.svg'); }
 
+#night-scene{
+  background: #0b1a44; 
+}
+
+.scene-bg--night{
+  background-color: #0b1a44; 
+}
+
+
+
 .sky-element{
   position:absolute;
   z-index:2;

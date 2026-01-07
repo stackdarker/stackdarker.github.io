@@ -27,7 +27,7 @@
         "tags": ["Angular", "Spring Boot", "REST", "Caching"],
         "links": { "github": "https://github.com/stackdarker/geo-intel-dashboard.git", "live": "" },
         "questId": "insights-hub",
-        "status": "completed",
+        "status": "Completed",
         "images": {
           "preview": "assets/projects/global-insights/preview.PNG",
           "gallery": [
