@@ -1,32 +1,44 @@
 {
     "quests": [
       {
-        "id": "insights-hub",
-        "projectId": "global-insights",
-        "title": "Ship Global Insights Hub",
+        "id": "intel-dashboard",
+        "projectId": "intel-dashboard",
+        "title": "Ship Geo Intel Dashboard",
         "status": "completed",
-        "desc": "Multi-API insights, caching, robust UX states, deployment-ready polish."
+        "desc": "Ship dashboard containing multi-API insights, caching, and robust UX states."
+      },
+      {
+        "id": "portfolio",
+        "title": "Complete and Post Portfolio V1",
+        "status": "completed",
+        "desc": "Create a personal portfolio to showcase projects and skills with personal creative touches."
       },
       {
         "id": "portfolio-v2",
         "title": "Upgrade Portfolio Systems",
         "status": "in_progress",
         "desc": "Add images/icon flavor, refine responsiveness, add more robust features."
+      },
+      {
+        "id": "intel-dashboard-v2",
+        "projectId": "intel-dashboard",
+        "title": "Upgrade Geo Intel Dashboard",
+        "status": "in_progress",
+        "desc": "Add more widgets to fill out dashboard. Add other color themes. Improve UI/responsiveness when applicable."
       }
     ],
     "projects": [
       {
-        "id": "global-insights",
-        "title": "Global Insights Hub",
+        "id": "intel-dashboard",
+        "title": "Geo Intel Dashboard",
         "type": "fullstack",
         "difficulty": "S",
         "boss": "Multi-API",
-        "desc": "A polished dashboard combining countries, FX, weather, time, and insights.",
+        "desc": "A polished dashboard combining widgets for countries, currency, weather, time, and insights.",
         "repo": "stackdarker/geo-intel-dashboard",
         "lastUpdated": "2025-12-15",
         "tags": ["Angular", "Spring Boot", "REST", "Caching"],
         "links": { "github": "https://github.com/stackdarker/geo-intel-dashboard.git", "live": "" },
-        "questId": "insights-hub",
         "status": "Completed",
         "images": {
           "preview": "assets/projects/global-insights/preview.PNG",
