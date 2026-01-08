@@ -786,6 +786,27 @@ body{
   flex-wrap:wrap; 
 }
 
+.chips,
+.card-stats{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.chip,
+.pill{
+  white-space: nowrap;
+  line-height: 1;
+  margin: 0; 
+}
+
+.pill-group{
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
 .pill{
   font-size: 11px;
   font-weight: 900;
@@ -793,7 +814,10 @@ body{
   text-transform: uppercase;
   padding: 6px 10px;
   border-radius: 999px;
-  margin: 14px;
+  margin: 0px;
+  line-height: 1;
+  margin-bottom: 20px;
+  white-space: nowrap;
   border: 1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.03);
 }
@@ -1394,4 +1418,13 @@ code{
 .toast-title{ font-weight: 950; letter-spacing:.08em; text-transform: uppercase; font-size: 12px; }
 .toast-body{ margin-top: 6px; color: rgba(255,255,255,.80); }
 
-
+/* Force tag chips to size consistently */
+#project-grid .chips .chip{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  line-height: 1;
+  border-radius: 999px;
+  margin: 0 !important;
+}

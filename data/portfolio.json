@@ -3,7 +3,7 @@
       {
         "id": "intel-dashboard",
         "projectId": "intel-dashboard",
-        "title": "Ship Geo Intel Dashboard",
+        "title": "Ship Geo Intel Dashboard V1",
         "status": "completed",
         "desc": "Ship dashboard containing multi-API insights, caching, and robust UX states."
       },
@@ -25,29 +25,147 @@
         "title": "Upgrade Geo Intel Dashboard",
         "status": "in_progress",
         "desc": "Add more widgets to fill out dashboard. Add other color themes. Improve UI/responsiveness when applicable."
-      }
+      },
+      {
+        "id": "auth-roles-v1",
+        "projectId": "auth-roles-service",
+        "title": "Build Auth & Roles Microservice V1",
+        "status": "in_progress",
+        "desc": "Design and implement a standalone authentication service with JWT, role-based access control, session tracking, and secure token workflows."
+      },
+      {
+        "id": "notification-service-v1",
+        "projectId": "notification-template-service",
+        "title": "Build Notification & Template Service V1",
+        "status": "in_progress",
+        "desc": "Create a reusable notification service supporting templated email delivery, async processing, retries, and idempotent sends."
+      },
+      {
+        "id": "media-service-v1",
+        "projectId": "media-asset-service",
+        "title": "Build Media & Asset Service V1",
+        "status": "in_progress",
+        "desc": "Develop a secure media service for handling file uploads, metadata management, and pre-signed access URLs using an S3-compatible backend."
+      },
+      {
+        "id": "platform-infra-v1",
+        "projectId": "platform-infra",
+        "title": "Set Up Platform Infrastructure V1",
+        "status": "in_progress",
+        "desc": "Configure local infrastructure to orchestrate platform microservices, databases, caching, and object storage using Docker Compose."
+      }      
     ],
     "projects": [
-      {
-        "id": "intel-dashboard",
-        "title": "Geo Intel Dashboard",
-        "type": "fullstack",
-        "difficulty": "S",
-        "boss": "Multi-API",
-        "desc": "A polished dashboard combining widgets for countries, currency, weather, time, and insights.",
-        "repo": "stackdarker/geo-intel-dashboard",
-        "lastUpdated": "2025-12-15",
-        "tags": ["Angular", "Spring Boot", "REST", "Caching"],
-        "links": { "github": "https://github.com/stackdarker/geo-intel-dashboard.git", "live": "" },
-        "status": "Completed",
-        "images": {
-          "preview": "assets/projects/global-insights/preview.PNG",
-          "gallery": [
-            "assets/projects/global-insights/1.PNG",
-            "assets/projects/global-insights/2.PNG"
-          ]
-    }   
-  } ]
+  {
+    "id": "intel-dashboard",
+    "title": "Geo Intel Dashboard",
+    "type": "fullstack",
+    "difficulty": "S",
+    "boss": "Multi-API",
+    "desc": "A polished dashboard combining widgets for countries, currency, weather, time, and insights.",
+    "repo": "stackdarker/geo-intel-dashboard",
+    "lastUpdated": "2025-12-15",
+    "tags": ["Angular", "Spring Boot", "REST APIs"],
+    "links": {
+      "github": "https://github.com/stackdarker/geo-intel-dashboard.git",
+      "live": ""
+    },
+    "status": "Completed",
+    "images": {
+      "preview": "assets/projects/global-insights/preview.PNG",
+      "gallery": [
+        "assets/projects/global-insights/1.PNG",
+        "assets/projects/global-insights/2.PNG"
+      ]
+    }
+  },
+
+  {
+    "id": "auth-roles-service",
+    "title": "Auth & Roles Microservice",
+    "type": "backend",
+    "difficulty": "S",
+    "boss": "Security & RBAC",
+    "desc": "A standalone authentication and authorization microservice providing JWT-based auth, role-based access control, session tracking, and audit logging. Designed to integrate cleanly into future projects.",
+    "repo": "",
+    "lastUpdated": "2026-01-08",
+    "tags": ["Spring Boot", "JWT", "RBAC", "Security"],
+    "links": {
+      "github": "",
+      "live": ""
+    },
+    "status": "In Progress",
+    "images": {
+      "preview": "assets/projects/inprogress.png",
+      "gallery": []
+    }
+  },
+
+  {
+    "id": "notification-template-service",
+    "title": "Notification & Template Service",
+    "type": "backend",
+    "difficulty": "S",
+    "boss": "Async Delivery",
+    "desc": "A reusable notification microservice supporting templated email delivery, retry logic, idempotent sends, and provider abstraction. Built to support authentication workflows, background jobs, and multi-application messaging needs.",
+    "repo": "",
+    "lastUpdated": "2026-01-08",
+    "tags": ["Spring Boot", "Async Jobs", "Email", "Templates"],
+    "links": {
+      "github": "",
+      "live": ""
+    },
+    "status": "In Progress",
+    "images": {
+      "preview": "assets/projects/inprogress.png",
+      "gallery": []
+    }
+  },
+
+  {
+    "id": "media-asset-service",
+    "title": "Media & Asset Service",
+    "type": "backend",
+    "difficulty": "S",
+    "boss": "Secure File Handling",
+    "desc": "A media management microservice handling secure file uploads, metadata tracking, and pre-signed access URLs using an S3-compatible backend.",
+    "repo": "",
+    "lastUpdated": "2026-01-08",
+    "tags": ["Spring Boot", "S3", "MinIO", "File Uploads"],
+    "links": {
+      "github": "",
+      "live": ""
+    },
+    "status": "In Progress",
+    "images": {
+      "preview": "assets/projects/future.png",
+      "gallery": []
+    }
+  },
+
+  {
+    "id": "platform-infra",
+    "title": "Platform Infrastructure & Local Orchestration",
+    "type": "infrastructure",
+    "difficulty": "M",
+    "boss": "Service Orchestration",
+    "desc": "Infrastructure repository for local orchestration of platform microservices using Docker Compose. Manages service networking, databases, Redis, MinIO, and environment configuration for full-stack integration testing.",
+    "repo": "",
+    "lastUpdated": "2026-01-08",
+    "tags": ["Docker", "Docker Compose", "Infrastructure", "DevOps"],
+    "links": {
+      "github": "",
+      "live": ""
+    },
+    "status": "In Progress",
+    "images": {
+      "preview": "assets/projects/future.png",
+      "gallery": []
+    }
+  }
+  
+]
+
 }
 
   

@@ -211,20 +211,22 @@ function bindQuestFilters() {
         <div class="card-meta">
           <h3 class="card-title">${escapeHTML(p.title)}</h3>
 
-          <div class="chips">
-          ${(p.tags || [])
-            .slice(0, 6)
-            .map(t => `<span class="chip">${escapeHTML(t)}</span>`)
-            .join("")}
+          <div class="chips chips--clamp">
+            ${(p.tags || [])
+              .slice(0, 5)
+              .map(t => `<span class="chip">${escapeHTML(t)}</span>`)
+              .join("")}
+
+            <span class="chips-break" aria-hidden="true"></span>
+
+            <span class="pill-group">
+              <span class="pill">Difficulty: ${escapeHTML(p.difficulty || "B")}</span>
+              <span class="pill">Boss: ${escapeHTML(p.boss || "Polish")}</span>
+            </span>
           </div>
         </div>
   
         <div class="card-bottom">
-          <div class="card-stats">
-            <span class="pill">Difficulty: ${escapeHTML(p.difficulty || "B")}</span>
-            <span class="pill">Boss: ${escapeHTML(p.boss || "Polish")}</span>
-          </div>
-  
           <div class="card-meta-row">
             <span class="meta-inline">
               <span class="meta-inline-key">Last updated</span>
