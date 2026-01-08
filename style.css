@@ -219,7 +219,7 @@ body{
 /* Avatar + orbit */
 #avatar-container{
   position:absolute;
-  top: 55%;
+  top: 60%;
   left: 48%;
   transform: translate3d(-50%,-50%,0);
   width: min(800px, 90vw);
