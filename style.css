@@ -397,6 +397,10 @@ body{
 }
 .zone-subtitle{ margin: 6px 0 0; color: var(--muted); }
 
+.zone{
+  scroll-margin-top: 92px; 
+}
+
 .grid-2{
   display:grid;
   grid-template-columns: 1fr 1fr;
