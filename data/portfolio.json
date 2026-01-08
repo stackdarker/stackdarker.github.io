@@ -17,7 +17,7 @@
         "id": "portfolio-v2",
         "title": "Upgrade Portfolio Systems",
         "status": "in_progress",
-        "desc": "Add images/icon flavor, refine responsiveness, add more robust features."
+        "desc": "Add images/icon flavor, refine responsiveness, add more robust features. Verify and flesh out project sorting/filtering. Custom mouse pointer + scroll bar."
       },
       {
         "id": "intel-dashboard-v2",
