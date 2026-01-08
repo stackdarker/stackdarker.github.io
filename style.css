@@ -110,31 +110,14 @@ body{
   backface-visibility: hidden;
 }
 
-.day-clouds,
-.night-clouds{
-  position: absolute;
-  left: 50%;
-  width: 70%;
-  transform: translateX(-50%);
-  translate: 0 0;
-  will-change: translate;
+@keyframes cloudBobDay{
+  0%,100% { transform: translate3d(-50%, 0, 0); }
+  50%     { transform: translate3d(-50%,-14px,0); }
 }
-
-.day-clouds{
-  top: 3%;
-  animation: cloudBobY 6.8s ease-in-out infinite;
+@keyframes cloudBobNight{
+  0%,100% { transform: translate3d(-50%, 0, 0); }
+  50%     { transform: translate3d(-50%,-14px,0); }
 }
-
-.night-clouds{
-  top: 20%;
-  animation: cloudBobY 7.2s ease-in-out infinite;
-}
-
-@keyframes cloudBobY{
-  0%,100% { translate: 0 0; }
-  50%     { translate: 0 -4px; } 
-}
-
 
 /* ====== anti-jiggle ====== */
 #sunset-scene, #night-scene,
@@ -235,27 +218,19 @@ body{
 
 /* Avatar + orbit */
 #avatar-container{
-  position: absolute;
+  position:absolute;
   top: 50%;
   left: 50%;
-
-  /* sizing of avatar */
-  transform: translate3d(-55%,-45%,0);
-
-  translate: 0 0;
+  transform: translate3d(-50%,-50%,0);
   width: min(800px, 90vw);
-  z-index: 20;          
-  pointer-events: none;
-  will-change: translate;
-
-  animation: floatY 5s ease-in-out infinite;
+  z-index: 20;
+  pointer-events:none;
+  animation: float 5.0s ease-in-out infinite;
 }
-
-@keyframes floatY{
-  0%,100%{ translate: 0 0; }
-  50%{ translate: 0 -18px; }
+@keyframes float{
+  0%,100%{ transform: translate3d(-50%,-50%,0) translate3d(0,0,0); }
+  50%{ transform: translate3d(-50%,-50%,0) translate3d(0,-18px,0); }
 }
-
 #avatar-container img{ width:100%; height:auto; display:block; }
 
 .nav-star-orbit{
@@ -452,7 +427,14 @@ body{
   justify-content:space-between;
   gap: 10px;
   margin-bottom: 12px;
+  flex-wrap: nowrap;
 }
+
+.panel-head .chip{
+  padding: 5px 9px;
+  font-size: 10px;
+}
+
 .panel-head h3{
   margin:0;
   font-size: 14px;
@@ -679,6 +661,12 @@ body{
   display: flex;
   gap: 8px;
   align-items: center;
+  flex-wrap: nowrap;        
+  overflow-x: auto;         /* allow scroll if needed */
+  scrollbar-width: none;      /* Firefox */
+}
+.quest-filters::-webkit-scrollbar{
+  display: none;            /* Chrome/Safari */
 }
 
 

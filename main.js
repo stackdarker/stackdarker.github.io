@@ -194,7 +194,7 @@ function bindQuestFilters() {
       card.dataset.featured = p.featured ? "1" : "0";
   
       const updatedText = p.repo ? "Loading…" : formatDate(p.lastUpdated);
-      const statusText = p.status === "completed" ? "Completed" : "In Progress";
+      const statusText = formatStatus(p.status);
   
       const previewSrc = p.images?.preview ? escapeHTML(p.images.preview) : "";
       card.innerHTML = `
@@ -1208,6 +1208,19 @@ function bindQuestFilters() {
     return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "2-digit" });
   }
 
+  function formatStatus(status) {
+    const s = String(status || "")
+      .trim()
+      .toLowerCase()
+      .replace(/[\s-]+/g, "_"); 
+  
+    if (s === "completed") return "Completed";
+    if (s === "in_progress") return "In Progress";
+    return "—";
+  }
+  
+  
+
   async function fetchGitHubLastUpdated(repo, timeEl) {
     if (!repo || !timeEl) return;
   
@@ -1298,7 +1311,7 @@ function bindQuestFilters() {
             <p class="muted">${escapeHTML(p.desc || "")}</p>
 
             <div class="divider"></div>
-            <p><b>Status:</b> ${escapeHTML(p.status || "in_progress")}</p>
+            <p><b>Status:</b> ${formatStatus(p.status)}</p>
             <p><b>Last updated:</b> ${escapeHTML(formatDate(p.lastUpdated))}</p>
 
             ${galleryHtml}
