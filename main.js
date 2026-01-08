@@ -660,16 +660,26 @@ function bindQuestFilters() {
   syncHUD();
 
   let introComplete = false;
-  function revealApp() {
-    if (!introComplete) return;
-    if (app.classList.contains("app-unlocked")) return;
-  
-    nightScene.classList.add("released");
-  
-    app.classList.remove("app-locked");
-    app.classList.add("app-unlocked");
-    app.setAttribute("aria-hidden", "false");
+
+
+  let didAutoScroll = false;
+
+function revealApp() {
+  if (!introComplete) return;
+  if (app.classList.contains("app-unlocked")) return;
+
+  nightScene.classList.add("released");
+
+  app.classList.remove("app-locked");
+  app.classList.add("app-unlocked");
+  app.setAttribute("aria-hidden", "false");
+
+  if (!didAutoScroll) {
+    didAutoScroll = true;
+    requestAnimationFrame(() => scrollToZone("about"));
   }
+}
+
   
 
   window.addEventListener("wheel", () => { if (introComplete) revealApp(); }, { passive: true });
@@ -1147,6 +1157,23 @@ function bindQuestFilters() {
       trophyGrid.appendChild(el);
     });
   }
+  // places user at correct section upon scrolling
+  function scrollToZone(id) {
+    const target = document.getElementById(id);
+    if (!target) return;
+  
+    const nav = document.querySelector(".hud");
+    const navH = nav ? nav.getBoundingClientRect().height : 80;
+  
+    const y =
+      window.scrollY +
+      target.getBoundingClientRect().top -
+      navH -
+      12; 
+  
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+  
 
   // XP/level
   function awardXP(amount, reason, opts = {}) {
