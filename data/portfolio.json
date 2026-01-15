@@ -51,9 +51,16 @@
         "id": "platform-infra-v1",
         "projectId": "platform-infra",
         "title": "Set Up Platform Infrastructure V1",
-        "status": "in_progress",
+        "status": "completed",
         "desc": "Configure local infrastructure to orchestrate platform microservices, databases, caching, and object storage using Docker Compose."
-      }      
+      },      
+      {
+        "id": "platform-shared-v1",
+        "projectId": "platform-shared",
+        "title": "Set Up Shared Platform Container V1",
+        "status": "completed",
+        "desc": "Create a shared hub for all microservices to ensure consistency/reduce redundancy and enable scaling/testing/collaborative grouping."
+      }     
     ],
     "projects": [
   {
@@ -87,11 +94,11 @@
     "difficulty": "S",
     "boss": "Security & RBAC",
     "desc": "A standalone authentication and authorization microservice providing JWT-based auth, role-based access control, session tracking, and audit logging. Designed to integrate cleanly into future projects.",
-    "repo": "",
+    "repo": "stackdarker/platform-auth-service",
     "lastUpdated": "2026-01-08",
     "tags": ["Spring Boot", "JWT", "RBAC", "Security"],
     "links": {
-      "github": "",
+      "github": "https://github.com/stackdarker/platform-auth-service.git",
       "live": ""
     },
     "status": "In Progress",
@@ -108,11 +115,11 @@
     "difficulty": "S",
     "boss": "Async Delivery",
     "desc": "A reusable notification microservice supporting templated email delivery, retry logic, idempotent sends, and provider abstraction. Built to support authentication workflows, background jobs, and multi-application messaging needs.",
-    "repo": "",
-    "lastUpdated": "2026-01-08",
+    "repo": "stackdarker/platform-notification-service",
+    "lastUpdated": "2026-01-09",
     "tags": ["Spring Boot", "Async Jobs", "Email", "Templates"],
     "links": {
-      "github": "",
+      "github": "https://github.com/stackdarker/platform-notification-service.git",
       "live": ""
     },
     "status": "In Progress",
@@ -129,16 +136,16 @@
     "difficulty": "S",
     "boss": "Secure File Handling",
     "desc": "A media management microservice handling secure file uploads, metadata tracking, and pre-signed access URLs using an S3-compatible backend.",
-    "repo": "",
-    "lastUpdated": "2026-01-08",
+    "repo": "stackdarker/platform-media-service",
+    "lastUpdated": "2026-01-09",
     "tags": ["Spring Boot", "S3", "MinIO", "File Uploads"],
     "links": {
-      "github": "",
+      "github": "https://github.com/stackdarker/platform-media-service.git",
       "live": ""
     },
     "status": "In Progress",
     "images": {
-      "preview": "assets/projects/future.png",
+      "preview": "assets/projects/inprogress.png",
       "gallery": []
     }
   },
@@ -147,26 +154,44 @@
     "id": "platform-infra",
     "title": "Platform Infrastructure & Local Orchestration",
     "type": "infrastructure",
-    "difficulty": "M",
+    "difficulty": "B",
     "boss": "Service Orchestration",
     "desc": "Infrastructure repository for local orchestration of platform microservices using Docker Compose. Manages service networking, databases, Redis, MinIO, and environment configuration for full-stack integration testing.",
-    "repo": "",
-    "lastUpdated": "2026-01-08",
+    "repo": "stackdarker/platform-infra",
+    "lastUpdated": "2026-01-14",
     "tags": ["Docker", "Docker Compose", "Infrastructure", "DevOps"],
     "links": {
-      "github": "",
+      "github": "https://github.com/stackdarker/platform-infra.git",
       "live": ""
     },
-    "status": "In Progress",
+    "status": "Completed",
     "images": {
-      "preview": "assets/projects/future.png",
+      "preview": "assets/projects/platform-infra/platform-infra-preview.png",
+      "gallery": []
+    }
+  },
+
+  {
+    "id": "platform-shared",
+    "title": "Platform Shared Container",
+    "type": "backend",
+    "difficulty": "B",
+    "boss": "Cross-Service",
+    "desc": "Shared foundation repository for a microservices-based platform. Acts as the single source of truth for API contracts, error semantics, and standards.",
+    "repo": "stackdarker/platform-shared",
+    "lastUpdated": "2026-01-14",
+    "tags": ["OpenAPI", "API Design", "Microservices", "Contracts", "Spring Boot"],
+    "links": {
+      "github": "https://github.com/stackdarker/platform-shared.git",
+      "live": ""
+    },
+    "status": "Completed",
+    "images": {
+      "preview": "assets/projects/platform-shared/platform-shared-preview.png",
       "gallery": []
     }
   }
   
 ]
-
-}
-
-  
+  }
   

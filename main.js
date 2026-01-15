@@ -31,9 +31,9 @@ let questView = "all";
 
     renderQuests(portfolioData.quests || []);
     bindQuestFilters();
-    renderProjects(portfolioData.projects || []);
+    renderProjects(sortByCompletionStatus(portfolioData.projects || []));
 
-    renderProjects(portfolioData.projects || []);
+    renderProjects(sortByCompletionStatus(portfolioData.projects || []));
   } catch (err) {
     console.error(err);
     showToast("Data load failed", "Could not load portfolio.json", 2200);
@@ -893,6 +893,18 @@ function revealApp() {
 
     awardXP(2, "Adjusted projects");
   }
+
+  function sortByCompletionStatus(projects){
+    return [...projects].sort((a, b) => {
+      const rank = status =>
+        status?.toLowerCase() === "completed" ? 0 : 1;
+  
+      const statusDiff = rank(a.status) - rank(b.status);
+      if (statusDiff !== 0) return statusDiff;
+  
+      // command to sort by newly updated first inside completed - commenting ut for now: return new Date(b.lastUpdated) - new Date(a.lastUpdated);
+    });
+  }  
 
   const treeWrap = document.getElementById("tree-wrap");
   const treeLines = document.getElementById("tree-lines");
