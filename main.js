@@ -741,7 +741,7 @@ function revealApp() {
       revealApp();
       playSfx("confirm");
       awardXP(10, `Navigated to ${label}`);
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+      scrollToZone(sectionId);
       trackVisit(sectionId);
     });
     return star;
@@ -1127,6 +1127,7 @@ function revealApp() {
       trophyGrid.appendChild(el);
     });
   }
+  
   // places user at correct section upon scrolling
   function scrollToZone(id) {
     const target = document.getElementById(id);
@@ -1139,7 +1140,7 @@ function revealApp() {
       window.scrollY +
       target.getBoundingClientRect().top -
       navH -
-      12; 
+      0; 
   
     window.scrollTo({ top: y, behavior: "smooth" });
   }
