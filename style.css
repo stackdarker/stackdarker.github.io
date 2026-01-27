@@ -398,7 +398,7 @@ body{
 .zone-subtitle{ margin: 6px 0 0; color: var(--muted); }
 
 .zone{
-  scroll-margin-top: 92px; 
+  scroll-margin-top: 110px; 
 }
 
 .grid-2{
@@ -799,6 +799,67 @@ body{
   white-space: nowrap;
   line-height: 1;
   margin: 0; 
+}
+
+/* Class: Software Engineering formatting */
+.panel-head .chip.chip--class{
+  font-size: 14px;
+  padding: 10px 14px;
+  font-weight: 950;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  color: var(--ink);
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(51, 51, 51, 0.95),
+      rgba(39, 39, 39, 0.95)
+    );
+  border: 1px solid rgba(255,255,255,.12);
+
+  border-radius: 14px;
+  box-shadow:
+    0 10px 22px rgba(83, 83, 83, 0.45),
+    0 0 0 1px rgba(255,255,255,.08) inset;
+
+  text-shadow:
+    0 2px 0 rgba(0,0,0,.6),
+    0 0 16px rgba(120,180,255,.25);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.panel-head .chip.chip--class{
+  text-shadow:
+    0 2px 0 rgba(136, 136, 136, 0.6),
+    0 0 18px color-mix(in srgb, var(--accent), transparent 60%);
+}
+
+
+/* Class: .. glossy sweep */
+.panel-head .chip.chip--class::after{
+  content:"";
+  position:absolute;
+  inset:-40% -30%;
+  background: linear-gradient(120deg, transparent 35%, rgba(255,255,255,22) 50%, transparent 65%);
+  transform: translateX(-40%) rotate(10deg);
+  opacity: .55;
+  pointer-events:none;
+}
+
+.panel-head:hover .chip.chip--class::after{
+  transform: translateX(40%) rotate(10deg);
+  transition: transform .55s ease;
+}
+
+@media (max-width: 520px){
+  .panel-head .chip.chip--class{
+    font-size: 12px;
+    padding: 9px 12px;
+    letter-spacing: .10em;
+  }
 }
 
 .pill-group{
