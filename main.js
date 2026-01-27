@@ -972,43 +972,6 @@ function revealApp() {
     window.__treeResizeT = setTimeout(drawEdges, 120);
   });
 
-  document.querySelectorAll(".node").forEach(node => {
-    node.addEventListener("click", () => {
-      const id = node.dataset.node;
-      const info = NODE_INFO[id];
-      if (!info) return;
-
-      document.querySelectorAll(".node").forEach(n => n.classList.remove("active"));
-      node.classList.add("active");
-
-      perkDetail.querySelector(".perk-title").textContent = info.title;
-      perkDetail.querySelector(".perk-body").textContent = info.body;
-
-      awardXP(8, "Selected perk");
-      playSfx("confirm");
-      unlock("skill_perk_selected");
-    });
-  });
-
-  document.querySelectorAll(".planner-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const build = btn.dataset.build || "all";
-      applyBuild(build);
-      awardXP(4, "Adjusted build");
-      playSfx("confirm");
-        });
-  });
-
-  function applyBuild(build) {
-    document.querySelectorAll(".node").forEach(node => {
-      const info = NODE_INFO[node.dataset.node];
-      if (!info) return;
-      const relevant = build === "all" ? false : info.build.includes(build);
-      node.classList.toggle("highlight", relevant);
-      if (build === "all") node.classList.remove("highlight");
-    });
-  }
-
   document.querySelectorAll(".copy-btn").forEach(btn => {
     btn.addEventListener("click", async () => {
       const sel = btn.dataset.copy;
@@ -1026,22 +989,15 @@ function revealApp() {
     });
   });
 
-  document.getElementById("contact-form")?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    showToast("Transmission queued", "UI demo complete. Add backend later.", 1800);
-    awardXP(12, "Transmitted message");
-    playSfx("confirm");
-  });
-
   document.getElementById("btn-resume")?.addEventListener("click", () => {
-    const resumeUrl = "assets/resume/resume2025.pdf";
+    const resumeUrl = "assets/resume/resume2026.pdf";
       if (typeof playSfx === "function") playSfx("confirm");
     else beep({ freq: 660, dur: 0.04, gain: 0.02 });
   
     awardXP(5, "Downloaded resume");
       const a = document.createElement("a");
     a.href = resumeUrl;
-    a.download = "resume2025.pdf"; 
+    a.download = "resume2026.pdf"; 
     a.target = "_blank";           
     a.rel = "noopener";
     document.body.appendChild(a);

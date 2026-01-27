@@ -878,27 +878,6 @@ body{
   pointer-events:none;
   opacity:.85;
 }
-.node{
-  position:absolute;
-  left: calc(var(--x) * 1%);
-  top: calc(var(--y) * 1%);
-  transform: translate(-50%, -50%);
-  background: transparent;
-  border: none;
-  color: rgba(255,255,255,.92);
-  cursor:pointer;
-  padding: 10px 10px;
-  border-radius: 14px;
-  display:flex;
-  align-items:center;
-  gap: 10px;
-  transition: transform .15s ease, background .15s ease;
-  outline:none;
-}
-.node:hover{ transform: translate(-50%, -50%) scale(1.02); background: rgba(255,255,255,.04); }
-.node:focus{ box-shadow: 0 0 0 3px rgba(255,255,255,.10); }
-.node.active { background: rgba(255,255,255,.26); box-shadow: 0 0 0 6px rgba(255,255,255,.06), 0 0 18px rgba(255,255,255,.22); }
-.node.highlight{ background: rgba(255,255,255,.05); }
 
 /* ===========================
    SKILL TREE!
@@ -957,21 +936,7 @@ body{
     text-align: center;
     padding: 14px 16px;
   }
-  
-  .node-title{
-    font-weight: 950;
-    letter-spacing: .10em;
-    text-transform: uppercase;
-    font-size: 14px;
-  }
-  
-  .node-sub{
-    margin-top: 6px;
-    font-size: 11px;
-    letter-spacing: .20em;
-    text-transform: uppercase;
-    opacity: .78;
-  }
+
   
   .cat-label{
     text-align: center;
@@ -1114,12 +1079,6 @@ body{
   .skill-lines line.branch-spine {
     stroke: rgba(255,255,255,.08);
     stroke-width: 2;
-  }
-
-  #skillCanvas{
-    position: relative;
-    width: 100%;
-    overflow: hidden;
   }
 
   #skillLines{
