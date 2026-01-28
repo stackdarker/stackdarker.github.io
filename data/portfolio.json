@@ -95,7 +95,7 @@
     "boss": "Security & RBAC",
     "desc": "A standalone authentication and authorization microservice providing JWT-based auth, role-based access control, session tracking, and audit logging. Designed to integrate cleanly into future projects.",
     "repo": "stackdarker/platform-auth-service",
-    "lastUpdated": "2026-01-08",
+    "lastUpdated": "2026-01-26",
     "tags": ["Spring Boot", "JWT", "RBAC", "Security"],
     "links": {
       "github": "https://github.com/stackdarker/platform-auth-service.git",
@@ -158,7 +158,7 @@
     "boss": "Service Orchestration",
     "desc": "Infrastructure repository for local orchestration of platform microservices using Docker Compose. Manages service networking, databases, Redis, MinIO, and environment configuration for full-stack integration testing.",
     "repo": "stackdarker/platform-infra",
-    "lastUpdated": "2026-01-14",
+    "lastUpdated": "2026-01-26",
     "tags": ["Docker", "Docker Compose", "Infrastructure", "DevOps"],
     "links": {
       "github": "https://github.com/stackdarker/platform-infra.git",

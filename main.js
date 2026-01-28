@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const XP_TABLE = [100, 180, 260, 350, 450, 560, 680, 820, 970, 1130];
 
   const ACHIEVEMENTS = [
-    { id: "enter_night", name: "First Contact", desc: "Entered the portfolio via the intro transition." },
+    { id: "enter_night", name: "First Contact", desc: "Entered the portfolio." },
     { id: "visit_all_zones", name: "World Explorer", desc: "Visited About, Projects, Skills, and Contact." },
     { id: "inspect_3_projects", name: "Investigator", desc: "Inspected 3 project missions." },
     { id: "copy_channel", name: "Comms Operator", desc: "Copied a contact channel." },
