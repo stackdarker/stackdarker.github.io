@@ -462,12 +462,32 @@ function bindQuestFilters() {
         e.stopPropagation();
     
         const filter = btn.dataset.skillFilter;
-    
+
         if (filter === 'reset') {
           setActivePlannerButton(null);
-          if (typeof applySkillTreeFilter === 'function') applySkillTreeFilter(null);
+        
+          // clear ALL tree state (including clicking the column title pills)
+          skillTreeFilter = null;
+          skillTreeTracked.clear();
+        
+          // clear pill UI states
+          treeEl.querySelectorAll(".cat-pill").forEach(p => {
+            p.classList.remove("is-tracked", "is-active");
+            p.setAttribute("aria-pressed", "false");
+          });
+        
+          // clear card highlights
+          treeEl.querySelectorAll(".skill-card").forEach(c => c.classList.remove("is-active"));
+        
+          // reset perk detail panel text 
+          const perkTitle = document.querySelector("#perk-detail .perk-title");
+          const perkBody  = document.querySelector("#perk-detail .perk-body");
+          if (perkTitle) perkTitle.textContent = "Select a perk";
+          if (perkBody)  perkBody.textContent = "Click a node to view details.";
+        
+          if (typeof applySkillTreeFilter === "function") applySkillTreeFilter(null);
           return;
-        }
+        }        
     
         setActivePlannerButton(filter);
         if (typeof applySkillTreeFilter === 'function') applySkillTreeFilter(filter);

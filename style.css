@@ -905,6 +905,11 @@ body{
   justify-content: flex-start;
 }
 
+/* Make cards opaque enough to hide the connector lines  */
+.skill-card{
+  background: rgba(39, 39, 39, 0.88) !important;
+}
+
 .pill-group{
   display: inline-flex;
   gap: 8px;
