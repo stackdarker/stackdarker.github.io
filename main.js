@@ -134,8 +134,9 @@ const filtered =
 
 
     filtered.sort((a, b) => {
-  const rank = s => (s === "completed" ? 1 : 0); // in_progress first
-  return rank(a.status) - rank(b.status);
+    const rank = s => (s === "future" ? 0 : s === "in_progress" ? 1 : 2);
+
+    return rank(a.status || "in_progress") - rank(b.status || "in_progress");
 });
 
   wrap.innerHTML = "";
@@ -145,14 +146,23 @@ const filtered =
     el.className = "quest-item";
     el.dataset.questId = q.id;
 
-    const isDone = q.status === "completed";
-    const statusLabel = isDone ? "Completed" : "In Progress";
+    const status = (q.status || "in_progress"); 
+
+    const statusLabel =
+      status === "completed" ? "Completed" :
+      status === "future"    ? "Future" :
+                               "In Progress";
+    
+    const rewardClass =
+      status === "completed" ? "reward--done" :
+      status === "future"    ? "reward--future" :
+                               "reward--progress";    
 
     el.innerHTML = `
       <div class="quest-title">${escapeHTML(q.title)}</div>
       <div class="quest-desc">${escapeHTML(q.desc || "")}</div>
       <div class="quest-rewards">
-        <span class="reward">${statusLabel}</span>
+        <span class="reward ${rewardClass}">${statusLabel}</span>
       </div>
     `;
     wrap.appendChild(el);
@@ -505,7 +515,7 @@ function bindQuestFilters() {
    
            if (perkTitle) perkTitle.textContent = c.title;
            if (perkBody) perkBody.innerHTML = c.items.map(i => `<div>• ${escapeHTML(i)}</div>`).join("");
-           
+
           applySkillTreeFilter(branch);
 
           awardXP(8, "Selected perk");
