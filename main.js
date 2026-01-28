@@ -292,7 +292,7 @@ function bindQuestFilters() {
            label: "FRONTEND",
            cards: [
              { title: "LANGUAGES", items: ["TypeScript", "JavaScript", "HTML • CSS"] },
-             { title: "FRAMEWORKS", items: ["Angular (v15–19)"] },
+             { title: "FRAMEWORKS", items: ["Angular (v15–19)", "React"] },
              { title: "UI + UX", items: ["Scalable UI design", "UX polish", "Responsive layout"] }
            ]
          },
@@ -300,11 +300,11 @@ function bindQuestFilters() {
            id: "backend",
            label: "BACKEND",
            cards: [
-             { title: "CORE", items: ["Java • Spring Boot", "REST APIs"] },
+             { title: "CORE", items: ["Java", "Python", "Spring Boot", "REST APIs"] },
              { title: "SERVER UI", items: ["Thymeleaf"] },
-             { title: "RUNTIME", items: ["Node.js • npm"] },
+             { title: "RUNTIME", items: ["Node.js", "npm"] },
              { title: "QUALITY", items: ["Input validation", "Test planning / execution / reporting"] },
-             { title: "ARCHITECTURE", items: ["OOP", "MVC/MVVM-inspired", "Repository pattern"] }
+             { title: "ARCHITECTURE", items: ["OOP", "MVC/MVVM", "Repository pattern"] }
            ]
          },
          {
@@ -324,7 +324,7 @@ function bindQuestFilters() {
            cards: [
              { title: "CONTAINERS", items: ["Docker", "Containerization"] },
              { title: "CI/CD", items: ["GitLab CI/CD"] },
-             { title: "APIS + I18N", items: ["World Bank API", "Internationalization (i18n)"] },
+             { title: "APIS", items: ["World Bank API", "REST APIs", "Internationalization"] },
              { title: "FORMATTING", items: ["Currency + time zone formatting"] },
              { title: "TOOLS", items: ["Postman", "Git/GitLab", "VS Code • IntelliJ • PyCharm"] },
              { title: "AI TOOLS", items: ["GitHub Copilot", "ChatGPT"] }
