@@ -666,21 +666,21 @@ function bindQuestFilters() {
 
   let didAutoScroll = false;
 
-function revealApp() {
-  if (!introComplete) return;
-  if (app.classList.contains("app-unlocked")) return;
-
-  nightScene.classList.add("released");
-
-  app.classList.remove("app-locked");
-  app.classList.add("app-unlocked");
-  app.setAttribute("aria-hidden", "false");
-
-  if (!didAutoScroll) {
-    didAutoScroll = true;
-    requestAnimationFrame(() => scrollToZone("about"));
-  }
-}
+  function revealApp(skipAutoScroll = false) {
+    if (!introComplete) return;
+    if (app.classList.contains("app-unlocked")) return;
+  
+    nightScene.classList.add("released");
+  
+    app.classList.remove("app-locked");
+    app.classList.add("app-unlocked");
+    app.setAttribute("aria-hidden", "false");
+  
+    if (!skipAutoScroll && !didAutoScroll) {
+      didAutoScroll = true;
+      requestAnimationFrame(() => scrollToZone("about"));
+    }
+  }  
 
   
 
@@ -738,12 +738,12 @@ function revealApp() {
       <span>${label}</span>
     `;
     star.addEventListener("click", () => {
-      revealApp();
+      revealApp(true); // prevent forced scroll
       playSfx("confirm");
       awardXP(10, `Navigated to ${label}`);
       scrollToZone(sectionId);
       trackVisit(sectionId);
-    });
+    });    
     return star;
   }
 
