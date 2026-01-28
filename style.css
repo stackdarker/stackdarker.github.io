@@ -503,6 +503,8 @@ body{
   transition: opacity .35s ease;
 }
 
+
+
 /* HUD-style frame */
 .hud-frame{
   position: relative;
@@ -887,6 +889,20 @@ body{
     padding: 9px 12px;
     letter-spacing: .10em;
   }
+}
+
+/* Quest Log header: allow wrap */
+#about .panel-head{
+  flex-wrap: wrap;        
+  align-items: flex-start;
+}
+
+/* Quest Log Filters */
+#about .quest-filters{
+  flex: 1 1 100%;         
+  flex-wrap: wrap;       
+  overflow-x: visible;    /* prevent cut off */
+  justify-content: flex-start;
 }
 
 .pill-group{
