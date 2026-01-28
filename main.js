@@ -285,13 +285,12 @@ function bindQuestFilters() {
    
      const SKILL_TREE = {
        title: "SOFTWARE ENGINEER",
-       subtitle: "FULL-STACK + ANDROID • BACKEND-LEANING",
        branches: [
          {
            id: "frontend",
            label: "FRONTEND",
            cards: [
-             { title: "LANGUAGES", items: ["TypeScript", "JavaScript", "HTML • CSS"] },
+             { title: "LANGUAGES", items: ["TypeScript", "JavaScript", "HTML" , "CSS"] },
              { title: "FRAMEWORKS", items: ["Angular (v15–19)", "React"] },
              { title: "UI + UX", items: ["Scalable UI design", "UX polish", "Responsive layout"] }
            ]
@@ -311,8 +310,8 @@ function bindQuestFilters() {
            id: "database",
            label: "DATABASE",
            cards: [
-             { title: "RDBMS", items: ["MySQL • SQL"] },
-             { title: "MOBILE DATA", items: ["SQLite • Room ORM", "Room DAOs"] },
+             { title: "RDBMS", items: ["MySQL", "SQL"] },
+             { title: "MOBILE DATA", items: ["SQLite", "Room ORM", "Room DAOs"] },
              { title: "PATTERNS", items: ["Repository pattern", "Entity relationships"] },
              { title: "SECURITY", items: ["Parameterized queries (SQL injection prevention)"] },
              { title: "MODELING", items: ["Data modeling", "Schema design", "Indexing basics"] }
@@ -326,7 +325,7 @@ function bindQuestFilters() {
              { title: "CI/CD", items: ["GitLab CI/CD"] },
              { title: "APIS", items: ["World Bank API", "REST APIs", "Internationalization"] },
              { title: "FORMATTING", items: ["Currency + time zone formatting"] },
-             { title: "TOOLS", items: ["Postman", "Git/GitLab", "VS Code • IntelliJ • PyCharm"] },
+             { title: "TOOLS", items: ["Postman", "Git/GitLab", "VS Code", "IntelliJ", "PyCharm"] },
              { title: "AI TOOLS", items: ["GitHub Copilot", "ChatGPT"] }
            ]
          },
@@ -506,7 +505,7 @@ function bindQuestFilters() {
    
            if (perkTitle) perkTitle.textContent = c.title;
            if (perkBody) perkBody.innerHTML = c.items.map(i => `<div>• ${escapeHTML(i)}</div>`).join("");
-   
+           
           applySkillTreeFilter(branch);
 
           awardXP(8, "Selected perk");
@@ -576,7 +575,6 @@ function bindQuestFilters() {
          });
          svgEl.appendChild(rootLine);
    
-         svgEl.appendChild(circleNS(cx, cy, CAT_DOT_R, isActive ? "rgba(255,255,255,.22)" : "rgba(255,255,255,.16)"));
    
          const cards = Array.from(treeEl.querySelectorAll(`.skill-card[data-branch="${catId}"]`));
          if (cards.length === 0) return;
@@ -624,7 +622,6 @@ function bindQuestFilters() {
              }));
            }
    
-           svgEl.appendChild(circleNS(pt.x, pt.y, CARD_DOT_R, drawStrong ? "rgba(255,255,255,.20)" : "rgba(255,255,255,.14)"));
    
            prevY = nextY;
          });

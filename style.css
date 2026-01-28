@@ -1107,6 +1107,10 @@ body{
     font-size: 11px;
     opacity: .88;
   }
+  .skill-card:focus{
+    box-shadow: 0 0 0 3px rgba(255,255,255,.12);
+  }
+  
   
   .skill-card .v{
     margin-top: 6px;
