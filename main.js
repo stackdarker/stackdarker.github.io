@@ -1337,8 +1337,6 @@ function bindQuestFilters() {
 
             <div class="divider"></div>
             <p><b>Status:</b> ${formatStatus(p.status)}</p>
-            <p><b>Last updated:</b> ${escapeHTML(formatDate(p.lastUpdated))}</p>
-
             ${galleryHtml}
             ${questHtml}
           `
