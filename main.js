@@ -1017,14 +1017,14 @@ function bindQuestFilters() {
   });
 
   document.getElementById("btn-resume")?.addEventListener("click", () => {
-    const resumeUrl = "assets/resume/resume2026.pdf";
+    const resumeUrl = "assets/resume/resumeKDaniel.pdf";
       if (typeof playSfx === "function") playSfx("confirm");
     else beep({ freq: 660, dur: 0.04, gain: 0.02 });
   
     awardXP(5, "Downloaded resume");
       const a = document.createElement("a");
     a.href = resumeUrl;
-    a.download = "resume2026.pdf"; 
+    a.download = "resumeKDaniel.pdf"; 
     a.target = "_blank";           
     a.rel = "noopener";
     document.body.appendChild(a);
