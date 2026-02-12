@@ -207,12 +207,16 @@ function bindQuestFilters() {
       const statusText = formatStatus(p.status);
   
       const previewSrc = p.images?.preview ? escapeHTML(p.images.preview) : "";
+      const galleryList = (p.images?.gallery || []).slice(0, 8);
+      const galleryAttr = galleryList.length
+        ? ` data-gallery='${JSON.stringify([p.images.preview, ...galleryList]).replace(/'/g, "&#39;")}'`
+        : "";
       card.innerHTML = `
         <div class="card-top">
-        <div class="thumb">
+        <div class="thumb open-project" data-project="${escapeHTML(p.id)}" role="button" tabindex="0" aria-label="Inspect ${escapeHTML(p.title)}">
             ${
             previewSrc
-              ? `<img class="thumb-img" src="${previewSrc}" alt="${escapeHTML(p.title)} preview" loading="lazy">`
+              ? `<img class="thumb-img" src="${previewSrc}" alt="${escapeHTML(p.title)} preview" loading="lazy"${galleryAttr}>`
               : `<div class="thumb thumb-placeholder" aria-hidden="true"></div>`
               }
         </div>
@@ -275,8 +279,45 @@ function bindQuestFilters() {
   
     wireDynamicProjectButtons();
     wireDynamicQuestButtons();
+    wireCardHoverCycle();
   }
-  
+
+  function wireCardHoverCycle() {
+    document.querySelectorAll(".thumb-img[data-gallery]").forEach(img => {
+      const images = JSON.parse(img.dataset.gallery);
+      if (images.length < 2) return;
+
+      const original = img.src;
+      let idx = 0;
+      let timer = null;
+
+      function advance() {
+        idx = (idx + 1) % images.length;
+        img.style.opacity = "0";
+        setTimeout(() => {
+          img.src = images[idx];
+          img.style.opacity = "";
+        }, 200);
+      }
+
+      img.addEventListener("mouseenter", () => {
+        idx = 0;
+        advance();
+        timer = setInterval(advance, 1000);
+      });
+
+      img.addEventListener("mouseleave", () => {
+        clearInterval(timer);
+        timer = null;
+        img.style.opacity = "0";
+        setTimeout(() => {
+          img.src = original;
+          img.style.opacity = "";
+        }, 200);
+      });
+    });
+  }
+
 // skill tree
 
    let skillTreeFilter = null;          
@@ -1318,17 +1359,18 @@ function bindQuestFilters() {
           : "";
 
         const gallery = (p.images?.gallery || []).slice(0, 8);
-        const galleryHtml = gallery.length
-          ? `<div class="divider"></div>
+        const galleryHtml = `<div class="divider"></div>
             <h4 class="modal-h">Screenshots</h4>
-            <div class="shot-grid">
-              ${gallery.map(src => `
-                <button class="shot" type="button" data-img="${escapeHTML(src)}" aria-label="Open screenshot">
-                  <img src="${escapeHTML(src)}" alt="" loading="lazy">
-                </button>
-              `).join("")}
-            </div>`
-          : "";
+            ${gallery.length
+              ? `<div class="shot-grid">
+                  ${gallery.map(src => `
+                    <button class="shot" type="button" data-img="${escapeHTML(src)}" aria-label="Open screenshot">
+                      <img src="${escapeHTML(src)}" alt="" loading="lazy">
+                    </button>
+                  `).join("")}
+                </div>`
+              : `<p class="muted">No screenshots yet.</p>`
+            }`;
 
         openModal(projectModal, {
           title: p.title,

@@ -787,7 +787,8 @@ body{
     filter: grayscale(1);
     opacity: .95;
   }
-  
+  .thumb.open-project{ cursor: pointer; }
+
 .thumb-placeholder{ background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); }
 
 .card-meta{
@@ -957,6 +958,7 @@ body{
   display: block;
   filter: grayscale(1);
   opacity: .95;
+  transition: opacity .2s ease;
 }
 
 .card:hover .thumb-img{
