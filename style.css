@@ -953,7 +953,7 @@ body{
 .thumb-img{
   width: 100%;
   height: clamp(160px, 22vh, 220px);
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   display: block;
   filter: grayscale(1);
@@ -961,8 +961,12 @@ body{
   transition: opacity .2s ease;
 }
 
+.card:hover .thumb{
+  filter: grayscale(0);
+}
 .card:hover .thumb-img{
   opacity: 1;
+  filter: grayscale(0);
 }
 
 
