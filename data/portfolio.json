@@ -103,10 +103,10 @@
     "images": {
       "preview": "assets/projects/platform-auth/platform-auth-preview.png",
       "gallery": [
-        "assets/projects/platform-auth/platform-auth-preview2.png",
-        "assets/projects/platform-auth/platform-auth-preview3.png",
-        "assets/projects/platform-auth/platform-auth-preview4.png",
-        "assets/projects/platform-auth/platform-auth-preview5.png"
+        "assets/projects/platform-auth/platform-auth-preview2.PNG",
+        "assets/projects/platform-auth/platform-auth-preview3.PNG",
+        "assets/projects/platform-auth/platform-auth-preview4.PNG",
+        "assets/projects/platform-auth/platform-auth-preview5.PNG"
       ]
     }
   },
@@ -128,7 +128,7 @@
     "images": {
       "preview": "assets/projects/platform-notification/platform-notification-preview.png",
       "gallery": [
-        "assets/projects/platform-notification/platform-notification-preview2.png"
+        "assets/projects/platform-notification/platform-notification-preview2.PNG"
       ]
     }
   },
@@ -150,9 +150,9 @@
     "images": {
       "preview": "assets/projects/platform-media/platform-media-preview.png",
       "gallery": [
-        "assets/projects/platform-media/platform-media-preview2.png",
-        "assets/projects/platform-media/platform-media-preview3.png",
-        "assets/projects/platform-media/platform-media-preview4.png"
+        "assets/projects/platform-media/platform-media-preview2.PNG",
+        "assets/projects/platform-media/platform-media-preview3.PNG",
+        "assets/projects/platform-media/platform-media-preview4.PNG"
       ]
     }
   },
@@ -174,8 +174,8 @@
     "images": {
       "preview": "assets/projects/platform-infra/platform-infra-preview.png",
       "gallery": [
-        "assets/projects/platform-infra/platform-infra-preview2.png",
-        "assets/projects/platform-infra/platform-infra-preview3.png"
+        "assets/projects/platform-infra/platform-infra-preview2.PNG",
+        "assets/projects/platform-infra/platform-infra-preview3.PNG"
       ]
     }
   },
@@ -197,9 +197,9 @@
     "images": {
       "preview": "assets/projects/platform-shared/platform-shared-preview.png",
       "gallery": [
-        "assets/projects/platform-shared/platform-shared-preview2.png",
-        "assets/projects/platform-shared/platform-shared-preview3.png",
-        "assets/projects/platform-shared/platform-shared-preview4.png"
+        "assets/projects/platform-shared/platform-shared-preview2.PNG",
+        "assets/projects/platform-shared/platform-shared-preview3.PNG",
+        "assets/projects/platform-shared/platform-shared-preview4.PNG"
       ]
     }
   }
