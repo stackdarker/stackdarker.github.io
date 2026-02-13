@@ -1136,13 +1136,21 @@ function bindQuestFilters() {
   }
 
 
+  let imageGallery = [];
+  let imageGalleryIdx = 0;
+
   function wireModalGallery(modalEl) {
     if (!modalEl) return;
-  
-    modalEl.querySelectorAll(".shot").forEach(btn => {
+
+    const shots = modalEl.querySelectorAll(".shot");
+    const srcs = Array.from(shots).map(b => b.dataset.img).filter(Boolean);
+
+    shots.forEach((btn, i) => {
       btn.onclick = () => {
         const src = btn.dataset.img;
         if (!src) return;
+        imageGallery = srcs;
+        imageGalleryIdx = i;
         openImageModal(src);
       };
     });
@@ -1155,14 +1163,45 @@ function bindQuestFilters() {
     if (!modal) return;
     modal.setAttribute("aria-hidden", "true");
   });
-  
-  
+
+  const imgPrev = document.getElementById("img-prev");
+  const imgNext = document.getElementById("img-next");
+
+  function updateImageNav() {
+    if (imgPrev) imgPrev.hidden = imageGallery.length <= 1;
+    if (imgNext) imgNext.hidden = imageGallery.length <= 1;
+  }
+
+  imgPrev?.addEventListener("click", () => {
+    if (imageGallery.length < 2) return;
+    imageGalleryIdx = (imageGalleryIdx - 1 + imageGallery.length) % imageGallery.length;
+    const modal = document.getElementById("image-modal");
+    const img = modal?.querySelector(".image-modal-img");
+    if (img) img.src = imageGallery[imageGalleryIdx];
+  });
+
+  imgNext?.addEventListener("click", () => {
+    if (imageGallery.length < 2) return;
+    imageGalleryIdx = (imageGalleryIdx + 1) % imageGallery.length;
+    const modal = document.getElementById("image-modal");
+    const img = modal?.querySelector(".image-modal-img");
+    if (img) img.src = imageGallery[imageGalleryIdx];
+  });
+
+  document.addEventListener("keydown", (e) => {
+    const modal = document.getElementById("image-modal");
+    if (!modal || modal.getAttribute("aria-hidden") !== "false") return;
+    if (e.key === "ArrowLeft") { imgPrev?.click(); e.preventDefault(); }
+    if (e.key === "ArrowRight") { imgNext?.click(); e.preventDefault(); }
+  });
+
   function openImageModal(src) {
     const modal = document.getElementById("image-modal");
-    const img = modal?.querySelector("img");
+    const img = modal?.querySelector(".image-modal-img");
     if (!modal || !img) return;
-  
+
     img.src = src;
+    updateImageNav();
     modal.setAttribute("aria-hidden", "false");
   }
   
