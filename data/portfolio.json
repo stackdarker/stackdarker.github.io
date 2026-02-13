@@ -80,8 +80,7 @@
     "images": {
       "preview": "assets/projects/global-insights/preview.PNG",
       "gallery": [
-        "assets/projects/global-insights/1.PNG",
-        "assets/projects/global-insights/2.PNG"
+        "assets/projects/global-insights/1.PNG"
       ]
     }
   },

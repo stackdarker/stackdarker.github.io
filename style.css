@@ -784,8 +784,6 @@ body{
     object-fit: cover;
     object-position: center;
     display: block;
-    filter: grayscale(1);
-    opacity: .95;
   }
   .thumb.open-project{ cursor: pointer; }
 
@@ -956,17 +954,7 @@ body{
   object-fit: contain;
   object-position: center;
   display: block;
-  filter: grayscale(1);
-  opacity: .95;
   transition: opacity .2s ease;
-}
-
-.card:hover .thumb{
-  filter: grayscale(0);
-}
-.card:hover .thumb-img{
-  opacity: 1;
-  filter: grayscale(0);
 }
 
 
